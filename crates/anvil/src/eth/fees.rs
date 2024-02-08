@@ -74,10 +74,12 @@ impl FeeManager {
 
     /// Calculates the current gas price
     pub fn gas_price(&self) -> U256 {
-        if self.is_eip1559() {
+        let gas_price: U256 = *self.gas_price.read();
+
+        if self.is_eip1559() && gas_price == U256::from(0) {
             self.base_fee().saturating_add(self.suggested_priority_fee())
         } else {
-            *self.gas_price.read()
+            gas_price
         }
     }
 
