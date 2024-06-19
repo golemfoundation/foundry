@@ -29,6 +29,7 @@ use crate::{
     },
     NodeConfig,
 };
+use alloy_primitives::B256;
 use anvil_core::{
     eth::{
         block::{Block, BlockInfo, Header},
