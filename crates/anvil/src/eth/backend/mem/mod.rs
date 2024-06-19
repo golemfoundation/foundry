@@ -86,6 +86,7 @@ use std::{
 use storage::{Blockchain, MinedTransaction};
 use tokio::sync::RwLock as AsyncRwLock;
 use trie_db::{Recorder, Trie};
+use alloy_primitives::B256;
 
 pub mod cache;
 pub mod fork_db;
